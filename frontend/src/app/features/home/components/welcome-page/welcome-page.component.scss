@@ -1,0 +1,37 @@
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../../../../assets/images/mac.jpg");
+  min-height: 100%;
+  filter: grayscale(50%);
+  position: relative;
+  padding: 24px 48px;
+  height: calc(100vh - 65px);
+  .display-left {
+    padding: 48px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+  }
+
+}
+
+.container1 {
+  
+}
+
+
+
+.welcome-txt {
+  font-size: 64px !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.name-txt {
+  font-size: 36px !important;
+}

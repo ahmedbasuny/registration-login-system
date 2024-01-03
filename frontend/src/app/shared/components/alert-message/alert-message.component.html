@@ -1,0 +1,4 @@
+<div class="alert alert-style" *ngIf="alertMessage && showAlert"
+    [ngClass]="{'alert-success': alertMessage.isSuccess, 'alert-danger': !alertMessage.isSuccess}" role="alert">
+    {{alertMessage.message}}
+</div>

@@ -1,0 +1,39 @@
+<div class="container-login">
+  <div class="login-card">
+    <div class="wrap-login p-t-50 p-b-90">
+      <span class="login-form-title">
+        <img width="165" height="40" src="https://www.catrion.com/wp-content/uploads/2023/10/logo.svg" class="attachment-large size-large wp-image-56" alt="">
+      </span>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <h1 class="pb-4">Login</h1>
+        <div class="form-group row py-2">
+          <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input formControlName="email" [class.is-valid]="getCtr('email')?.valid && getCtr('email')?.touched"
+              [class.is-invalid]="getCtr('email')?.invalid && getCtr('email')?.touched" type="text" class="form-control"
+              id="inputEmail" placeholder="Email">
+            <app-validations-msg [controller]="getCtr('email')" [controlName]="'Email'"></app-validations-msg>
+          </div>
+        </div>
+        <div class="form-group row py-2">
+          <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-9">
+            <input formControlName="password" [class.is-valid]="getCtr('password')?.valid && getCtr('password')?.touched"
+              [class.is-invalid]="getCtr('password')?.invalid && getCtr('password')?.touched" type="password"
+              class="form-control" id="inputPassword" placeholder="Password">
+            <app-validations-msg [controller]="getCtr('password')" [controlName]="'Password'"></app-validations-msg>
+          </div>
+        </div>
+        <div class="login-actions d-flex">
+          <button [disabled]="loginForm.invalid" type="submit" class="btn btn-secondary">Login</button>
+        </div>
+        <p class="register-link"> 
+          <span>Don't have an account?</span>
+          <a [routerLink]="['/auth/register']" class="btn btn-link">Register</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <app-alert-message></app-alert-message>
+</div>
