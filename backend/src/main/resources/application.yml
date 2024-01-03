@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: 'create-drop'
+    show-sql: true
+
+application:
+  security:
+    jwt:
+      secret-key: ${JWT_SECRET_KEY:674958674Asdf956856749586745694857694576234CATrionTest7ere7te7r}
+      expiration: ${JWT_KEY_EXPIRATION:3600000}  # an hour
+      refresh-token:
+        expiration: ${JWT_REFRESH_EXPIRATION:259200000} # 3 days

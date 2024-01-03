@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: base_postgres
+    image: 'postgres:latest'
+    env_file:
+      - ./base-postgres.env
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - '5432:5432'
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: base_pgadmin
+    image: dpage/pgadmin4:latest
+    env_file:
+      - ./base-pgadmin.env
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+      - ./docker_pgadmin_servers.json:/pgadmin4/servers.json
+    ports:
+      - '5050:5050'
+    entrypoint:
+      - "/bin/sh"
+      - "-c"
+      - "/bin/echo 'postgres:5432:*:base_user:password' > /tmp/pgpassfile && chmod 600 /tmp/pgpassfile && /entrypoint.sh"
+
+volumes:
+  postgres:
+  pgadmin:
