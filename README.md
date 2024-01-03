@@ -1,14 +1,15 @@
 # registration-login-system
 a registration and login system using spring boot, security and angular
 
-** Backend :-
+### Backend :-
 --------------
-*** Spring boot
-*** Spring security
-*** JWT
-*** Postgres
-*** Pgadmin
+* Spring boot
+* Spring security
+* JWT
+* Postgres
+* Pgadmin
+* Docker
 
-** Frontend :-
+### Frontend :-
 ----------------
 *** Angular
